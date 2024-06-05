@@ -19,6 +19,7 @@ const config_1 = __importDefault(require("./app/config"));
 // const port = 3000 
 function main() {
     return __awaiter(this, void 0, void 0, function* () {
+        console.log(config_1.default.database_url, config_1.default.port);
         try {
             yield mongoose_1.default.connect(config_1.default.database_url);
             app_1.default.listen(config_1.default.port, () => {
@@ -26,9 +27,10 @@ function main() {
             });
         }
         catch (error) {
-            // console.log(error)
+            console.log(error);
         }
         // use `await mongoose.connect('mongodb://user:password@127.0.0.1:27017/test');` if your database has auth enabled
+        // menda menda
     });
 }
 main();
