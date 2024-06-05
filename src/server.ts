@@ -1,17 +1,26 @@
 import mongoose from "mongoose"
 import app from "./app"
+import config from "./app/config";
 // import 'dotenv/config'
-const port = 3000
+// const port = 3000 
 
 
 
 async function main() {
-    await mongoose.connect(`${process.env.DATABASE_URL}`);
+    try {
+        await mongoose.connect(config.database_url as string);
+        app.listen(config.port, () => {
+            console.log(`my moongose server working  ${config.port}`)
+        })
+
+    } catch (error) {
+        // console.log(error)
+
+    }
 
     // use `await mongoose.connect('mongodb://user:password@127.0.0.1:27017/test');` if your database has auth enabled
 }
 
+main()
 
-app.listen(process.env.PORT, () => {
-    console.log(`my moongose server working  ${process.env.PORT}`)
-})
+
