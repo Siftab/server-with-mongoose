@@ -32,7 +32,9 @@ const StudentSchema = new Schema<Student>({
         ocupation: { type: String },
         adress: { type: String }
 
-    }
+    },
+    profileImage: { type: String },
+    isActive: ["active", "inActive"]
 
 
 })
