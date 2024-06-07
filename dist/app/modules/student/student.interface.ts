@@ -1,5 +1,5 @@
 import { Schema, model, connect } from 'mongoose';
-interface Guardian {
+export interface Guardian {
     fatherName: string;
     fatherOcupation: string;
     fatherContactNo: string;
@@ -7,13 +7,20 @@ interface Guardian {
     motherOcupation: string;
     motherContactNo: string;
 }
+export interface UserName {
+    firstName: string;
+    lastName: string;
+
+}
+export interface LocalGuardian {
+    name: string;
+    contactNo: string;
+    ocupation: string;
+    adress: string
+}
 
 export type Student = {
-    name: {
-        firstName: string;
-        lastName: string;
-
-    }
+    name: UserName;
     gender: "male" | "female";
     email: string;
     conactNo: string;
@@ -21,6 +28,9 @@ export type Student = {
     bloodGroup?: `${'A' | 'B' | 'AB' | 'O'}${'+' | '-'}`;
     presentAddress: string;
     permanentAddress: string;
-    guardian: Guardian
+    guardian: Guardian;
+    localGuardian: LocalGuardian;
+    profileImage?: string;
+    isActive: "active" | "inActive"
 
 }
