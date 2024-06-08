@@ -1,5 +1,5 @@
 import { Schema, model, connect } from 'mongoose';
-import { Guardian, LocalGuardian, Student, Student, UserName } from './student.interface';
+import { Guardian, LocalGuardian, Student, UserName } from './student.interface';
 const UserNameSchema = new Schema<UserName>({
     firstName: { type: String, required: true },
     lastName: { type: String, required: true }
