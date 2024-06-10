@@ -17,6 +17,7 @@ const createStudent = async (req: Request, res: Response) => {
 
     } catch (error) {
         console.log(`error in student ${error}`)
+        res.status(500).send("pai nai kichu")
 
     }
 }
