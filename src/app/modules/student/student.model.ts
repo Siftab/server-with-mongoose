@@ -1,7 +1,17 @@
 import { Schema, model, connect } from 'mongoose';
 import { Guardian, LocalGuardian, Student, UserName } from './student.interface';
 const UserNameSchema = new Schema<UserName>({
-    firstName: { type: String, required: true },
+    firstName: {
+        type: String, required: true, maxlength: [20, "make it short"],
+        trim: true,
+        validate: {
+            validator: function (value: string) {
+                const firstName = value.charAt(0).toUpperCase() + value.slice(1).toLowerCase();
+                return value === firstName
+            },
+            message: "{VALUE} is not appropiate"
+        }
+    },
     lastName: { type: String, required: true }
 
 })
@@ -33,7 +43,7 @@ const StudentSchema = new Schema<Student>({
         default: "male",
         required: true
     },
-    email: { type: String, unique: true },
+    email: { type: String },
     conactNo: { type: String },
     emergencyContactNo: { type: String },
     bloodGroup: {
