@@ -1,8 +1,12 @@
 import { Request, Response } from "express";
 import { StudentServices } from "./student.service";
+<<<<<<< HEAD
 import Joi from 'joi';
 import StudentJoiSchema from "./student.validation";
 import { json } from "stream/consumers";
+=======
+import { z } from  "zod"
+>>>>>>> origin/main
 
 
 
