@@ -8,13 +8,13 @@ const UserNameSchema = new Schema<UserName>({
     firstName: {
         type: String, required: true, maxlength: [20, "make it short"],
         trim: true,
-        validate: {
-            validator: function (value: string) {
-                const firstName = value.charAt(0).toUpperCase() + value.slice(1).toLowerCase();
-                return value === firstName
-            },
-            message: "{VALUE} is not appropiate"
-        }
+        // validate: {
+        //     validator: function (value: string) {
+        //         const firstName = value.charAt(0).toUpperCase() + value.slice(1).toLowerCase();
+        //         return value === firstName
+        //     },
+        //     message: "{VALUE} is not appropiate"
+        // }
     },
     lastName: { type: String, required: true }
 
@@ -49,13 +49,13 @@ const StudentSchema = new Schema<Student>({
     },
     email: {
         type: String,
-        validate: {
-            validator: (value: string) => {
-                return validator.isEmail(value)
+        // validate: {
+        //     validator: (value: string) => {
+        //         return validator.isEmail(value)
 
-            },
-            message: "{VALUE}is not a proper email "
-        }
+        //     },
+        //     message: "{VALUE}is not a proper email "
+        // }
     },
     conactNo: { type: String },
     emergencyContactNo: { type: String },
