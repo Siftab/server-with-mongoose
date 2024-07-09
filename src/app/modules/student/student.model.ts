@@ -40,6 +40,10 @@ const StudentSchema = new Schema<Student>({
     name: {
         type: UserNameSchema,
         required: [true, "tomar ki nam nai!!abnormal"]
+    }, user: {
+        type: Schema.Types.ObjectId,
+        required: [true, "user id is must "],
+        unique: true
     }
     , gender: {
         type: String,

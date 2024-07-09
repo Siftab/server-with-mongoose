@@ -11,5 +11,6 @@ export type TUser = {
 }
 export type newUser = {
     password: string,
-    role: string
+    role: string,
+    id: string
 }
