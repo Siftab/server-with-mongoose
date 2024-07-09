@@ -7,8 +7,6 @@ export const userSchemaZod = z.object({
     })
         .max(20, { message: "maxium password limt is 20 chareters" })
         .optional(),
-    needsPasswordChange: z.boolean(),
-    role: z.enum(["admin", "student", "faculty"]),
-    status: z.enum(["in-progress", "blocked"]),
-    isDeleted: z.boolean()
+
+
 });

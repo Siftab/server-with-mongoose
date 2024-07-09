@@ -1,13 +1,6 @@
 import { Request, Response } from "express";
-import { StudentServices } from "./student.service";
-<<<<<<< HEAD
-import Joi from 'joi';
+import { StudentServices } from "./student.services";
 import StudentJoiSchema from "./student.validation";
-import { json } from "stream/consumers";
-=======
-import { z } from  "zod"
->>>>>>> origin/main
-
 
 
 const createStudent = async (req: Request, res: Response) => {
